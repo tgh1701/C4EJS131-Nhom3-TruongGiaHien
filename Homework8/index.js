@@ -8,6 +8,13 @@ for (let i = 100; i >= 1; i--){
 console.log(sum/sum1)
 
 // So chinh phuong
-    for (let i = 1; i <= 100; i++) {
-    console.log(i*i)
+//     for (let i = 1; i <= 100; i++) {
+//     console.log(i*i)
+// }
+let y = 0;
+for (let x = 1; x <= 10000; x++){
+    if(y < 10000){
+        y = x*x;
+        console.log(y)
+    }
 }
