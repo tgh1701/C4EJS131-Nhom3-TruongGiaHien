@@ -23,14 +23,25 @@ console.log("max = ", Math.max(...arrD));
 console.log("min = ", Math.min(...arrD));
 
 // 4. Cho mảng E = [1, 2, 'a', 'b', 'c', 2, 4, 5], không sử dụng thêm mảng mới, đưa các số về đầu mảng và các chữ về cuối mảng, sử dụng các hàm pop, push, shift, unshift
-const arrE = [1, 2, 'a', 'b', 'c', 2, 4, 5];
-arrE.splice(2, 3); // at position 2, remove 3 items
-arrE.push('a', 'b', 'c');
-console.log("arrE = ", arrE)
+// Cach 1
+const arrE1 = [1, 2, 'a', 'b', 'c', 2, 4, 5];
+arrE1.splice(2, 3); // at position 2, remove 3 items
+arrE1.push('a', 'b', 'c');
+console.log("arrE = ", arrE1)
+
+// Cach 2
+const arrE2 = [1, 2, 'a', 'b', 'c', 2, 4, 5];
+for(let i = 3; i >= 1; i--){
+    arrE2.unshift(arrE2.pop());
+}
+console.log("arrE = ", arrE2)
 
 // 5. Cho mảng F = [1, 23, 41, 5, 6, 1, 14, 66, 1124, 1, 1, 55, 15, 0], tìm ra vị trí thứ 4 của số 1 trong mảng (hint: dùng findIndex)
+// Cach 1
 const arrF = [1, 23, 41, 5, 6, 1, 14, 66, 1124, 1, 1, 55, 15, 0];
 let checkNumber1 = arrF.findIndex(
     (arrF, checkNumber1) => arrF === 1 && checkNumber1 > 9
     );
 console.log("checkNumber1 = ", checkNumber1);
+// Cach 2
+
