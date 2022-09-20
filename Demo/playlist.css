@@ -1,0 +1,388 @@
+@import url(//db.onlinewebfonts.com/c/1bc2daddba36ba331fc4fa67828eabdc?family=Circular+Spotify+Tx+T+Med);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Circular Spotify Tx T Med;
+}
+
+:root {
+  --primary-color: #fa243c;
+  --text-color: #333;
+}
+
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.btn {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.progress:hover {
+  color: #fa243c;
+}
+.player {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 500;
+}
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 5px 5px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* HEADER */
+.control header {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+header h4 {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+header p {
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+/* CD */
+.cd {
+  display: flex;
+  margin: auto;
+  width: 50px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+}
+
+/* CONTROL */
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  width: 100%;
+  padding: 20px 20px 10px 20px;
+}
+
+.control .btn {
+  color: #666;
+  padding: 18px;
+  font-size: 18px;
+}
+
+.control .btn.active {
+  color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+.control-progress {
+  display: flex;
+}
+
+.control .center {
+  display: flex;
+}
+
+.progress {
+  width: 400px;
+  -webkit-appearance: none;
+  height: 10px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-bottom: 10px;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+#volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.volume-slider {
+  height: 26px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+.volume-slider.active {
+  opacity: 1;
+  display: block;
+}
+.volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: #d3d3d3;
+  border-radius: 15px;
+  border: 0px solid #000000;
+}
+.volume-slider::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: 15px;
+  background: #fa243c;
+  background-color: #fa243c;
+}
+
+/* PLAYLIST */
+.playlist {
+  padding-top: 90px;
+  margin-left: 275px;
+  padding-right: 50px;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fafafa;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+  background-color: var(--primary-color);
+}
+
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.song .author {
+  font-size: 12px;
+  color: #999;
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
+
+.menu_left {
+  cursor: pointer;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  align-items: flex-start;
+  box-shadow: 0 0 5px 0 #333;
+  z-index: 1000;
+}
+
+.menu_left .left {
+  color: #383838;
+  margin: 25px 0px 10px 25px;
+}
+
+.menu_left .logo {
+  font-size: 35px;
+  cursor: pointer;
+}
+.logo .text {
+  font-weight: 200;
+  font-size: 30px;
+  margin-left: 10px;
+}
+.menu_left .menu .item {
+  color: gray;
+}
+.menu_left .menu .item .text {
+  text-decoration: none;
+  color: gray;
+}
+.menu_left .menu .main .text {
+  color: #fa2c44;
+}
+.menu_left .menu .main {
+  color: #fa2c44;
+}
+.left .text {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.left .icon {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+li {
+  list-style: none;
+}
+.menu_left .menu .item:hover {
+  transition: all 0.4s ease 0s;
+  color: #fa2c44;
+}
+.menu_left .menu .item .text:hover {
+  transition: all 0.4s ease 0s;
+  color: #fa2c44;
+}
+
+.menu_top {
+  position: fixed;
+  left: 250px;
+  right: 0px;
+  background-color: #383838;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100% - 250px;
+  height: 64px;
+  z-index: 1000;
+}
+.menu_top .iconlist {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.menu_top .icon {
+  font-size: 32px;
+  opacity: 0.8;
+  margin-left: 15px;
+}
+
+.menu_top .user {
+  display: flex;
+}
+
+.menu_top .user .text {
+  align-self: center;
+  font-size: 1rem;
+}
+.menu_top .user .signup {
+  width: 110px;
+  height: 48px;
+  position: relative;
+  color: white;
+  border: none;
+  background-color: rgb(39, 39, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 500px;
+  transition: all 0.2s ease-in-out;
+}
+.menu_top .user .login {
+  background-color: white;
+  border-radius: 500px;
+  width: 110px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.menu_top .user .login:hover {
+  font-size: 17px;
+  color: #fa2c44;
+  transform: scale(1.05);
+}
+.menu_top .user .signup:hover {
+  font-size: 17px;
+  color: #fa2c44;
+  transform: scale(1.05);
+}

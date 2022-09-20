@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chú mèo đi hear</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./playlist.css" rel="stylesheet" />
+    <link href="./img/iconweb.png" rel="icon" />
+  </head>
+  <body>
+    <header class="menu_left">
+      <a href="./Final.html">
+        <div class="left logo">
+          <i class="fa-brands fa-napster"></i><span class="text">CatMixer</span>
+        </div></a
+      >
+      <div class="left menu">
+        <ul>
+          <li class="item main">
+            <i class="icon fa-solid fa-house"></i>
+            <a href="Final.html" class="text">Home</a>
+          </li>
+          <li class="item">
+            <i class="icon fa-solid fa-magnifying-glass"></i>
+            <a href="Search.html" class="text">Search</a>
+          </li>
+          <li class="item">
+            <i class="icon fa-solid fa-chart-simple"></i>
+            <a href="Library.html" class="text">Your Library</a>
+          </li>
+        </ul>
+      </div>
+      <div class="left menu">
+        <ul>
+          <li class="item">
+            <i class="icon fa-regular fa-square-plus"></i>
+            <a href="#" class="text">Create Playlist</a>
+          </li>
+          <li class="item">
+            <i class="icon fa-solid fa-heart"></i>
+            <a href="#" class="text">Liked Songs</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <nav class="menu_top">
+      <div class="user">
+        <a href="./signup.html">
+          <button class="text signup">
+            <span>Sign up</span>
+          </button></a
+        >
+        <a href="./login.html">
+          <button class="text login">
+            <span>Log in</span>
+          </button></a
+        >
+      </div>
+    </nav>
+    <div class="player">
+      <!-- Dashboard -->
+      <div class="dashboard">
+        <!-- Control -->
+        <div class="control">
+          <div class="left">
+            <header>
+              <h4>
+                Now playing:
+                <p></p>
+              </h4>
+            </header>
+          </div>
+          <div class="center">
+            <div class="cd">
+              <div class="cd-thumb"></div>
+            </div>
+            <div class="btn btn-repeat">
+              <i class="fas fa-redo"></i>
+            </div>
+            <div class="btn btn-prev">
+              <i class="fas fa-step-backward"></i>
+            </div>
+            <div class="btn btn-toggle-play">
+              <i class="fas fa-pause icon-pause"></i>
+              <i class="fas fa-play icon-play"></i>
+            </div>
+            <div class="btn btn-next">
+              <i class="fas fa-step-forward"></i>
+            </div>
+            <div class="btn btn-random">
+              <i class="fas fa-random"></i>
+            </div>
+          </div>
+          <div id="volume">
+            <div class="btn btn-volume">
+              <i class="fas fa-volume-up icon-nonmute"></i>
+              <!-- <i class="fa-solid fa-volume-xmark icon-mute"></i> -->
+            </div>
+            <input
+              id="volume-slider"
+              class="volume-slider"
+              type="range"
+              value="50"
+              step="1"
+              min="0"
+              max="100"
+            />
+          </div>
+        </div>
+        <input
+          id="progress"
+          class="progress"
+          type="range"
+          value="0"
+          step="1"
+          min="0"
+          max="100"
+        />
+        <audio id="audio" src=""></audio>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist"></div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
